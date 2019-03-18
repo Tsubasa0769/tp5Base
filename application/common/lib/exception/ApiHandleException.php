@@ -1,7 +1,7 @@
 <?php
 namespace app\common\lib\exception;
 use think\exception\Handle;
-
+use think\facade\Log;
 class ApiHandleException extends  Handle {
 
     /**
@@ -17,6 +17,7 @@ class ApiHandleException extends  Handle {
         }
         if ($e instanceof ApiException) {
             $this->httpCode = $e->httpCode;
+            Log::write($e->getMessage(),'error');
         }
         return  show(0, $e->getMessage(), [], $this->httpCode);
     }
