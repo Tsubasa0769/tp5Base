@@ -3,8 +3,8 @@ namespace app\index\Controller;
 use think\Controller;
 header('Content-type:text/html;charset=utf-8');
 class Wx extends Controller {
-	const APPKEY = 'wxdf2982c8f9eff5fc';
-	const APPSECRET = 'c3887065dddc9cb3f62ddc5ad14218ea';
+	const APPKEY = '';
+	const APPSECRET = '';
     public function index(){//用来设置接口的配置信息
     	$nonce=input('get.nonce');
     	$timestamp=input('get.timestamp');
